@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<classpath>
-	<classpathentry excluding="**/bower_components/*|**/node_modules/*|**/*.min.js" kind="src" path="node_modules/angular"/>
-	<classpathentry excluding="**/bower_components/*|**/node_modules/*|**/*.min.js" kind="src" path="node_modules/angular-animate"/>
-	<classpathentry excluding="**/bower_components/*|**/node_modules/*|**/*.min.js" kind="src" path="node_modules/angular-ui-router/release"/>
-	<classpathentry excluding="**/bower_components/*|**/node_modules/*|**/*.min.js" kind="src" path="node_modules/angular-ui-router/src"/>
-	<classpathentry kind="con" path="org.eclipse.wst.jsdt.launching.JRE_CONTAINER"/>
-	<classpathentry kind="output" path=""/>
-</classpath>
