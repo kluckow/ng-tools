@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html ng-app="ngToolsApp">
+<head>
+<meta charset="UTF-8">
+<title>ng-Tools</title>
+<!-- BOOTSTRAP -->
+<link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.css">
+<!-- MY STYLES -->
+<link rel="stylesheet" href="res/css/some.css">
+<link rel="stylesheet" href="res/css/common.css">
+<link rel="stylesheet" href="res/css/dashboard.css">
+<link rel="stylesheet" href="res/css/timetracker.css">
+<!-- FAVICON -->
+<!-- <link rel="shortcut icon" href="res/img/favicon.ico" type="image/png" /> -->
+</head>
+
+<body>
+
+	<div class="row container-fluid">
+	
+		<!-- toolar -->
+		<nav class="navbar navbar-inverse navbar-fixed-top col-xs-12" role="navigation" id="global-toolbar">
+			<ul class="nav navbar-nav navbar-left">
+				<li class="toolbar-item"><a ui-sref="dashboard" ui-sref-opts="{reload: true}"><span class="glyphicon glyphicon-home clickable"></span></a></li>
+<!-- 				<li class="clickable toolbar-item"><a ui-sref="codingtools-todo"><span class="glyphicon glyphicon-wrench"></span></a></li> -->
+				<!-- <li class="clickable toolbar-item"><a ui-sref="profile-todo"><span class="glyphicon glyphicon-user"></span></a></li> -->
+			</ul>
+			<ul class="nav navbar-nav navbar-right">
+				<li ng-controller="DateCtrl as dateCtrl"><span class="navbar-text" style="color:{{color}}">{{currentTime | date: 'HH:mm:ss'}}</span></li>
+				<li class="toolbar-item"><a ui-sref="profile-todo"><span class="glyphicon glyphicon-menu-hamburger clickable"></span></a></li>
+			</ul>
+		</nav>
+		
+		<!-- route div -->
+		<div class="view-container">
+			<div ui-view class="view-frame"></div>
+		</div>
+	</div>
+	
+	
+<!-- JQuery -->
+<script src="node_modules/jquery/dist/jquery.min.js"></script>
+<!-- Bootstrap -->
+<script src="node_modules/bootstrap/dist/js/bootstrap.js"></script>
+<!-- AngularJS -->
+<script src="node_modules/angular/angular.js"></script>
+<!-- Angular Animate -->
+<script src="node_modules/angular-animate/angular-animate.min.js"></script>
+<!-- AngularUI Router -->
+<script src="node_modules/angular-ui-router/release/angular-ui-router.min.js"></script>
+<script src="node_modules/angular-modal-service/dst/angular-modal-service.min.js"></script>
+<!-- Main App -->
+<script src="app/app.js"></script>
+<!-- Dashboard -->
+<script src="app/modules/common/dashboard/js/dashboard.controller.js"></script>
+<script src="app/modules/timetracker/js/timetracker.controller.js"></script>
+</body>
+</html>

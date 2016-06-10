@@ -1,0 +1,18 @@
+<div class="modal fade">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h4 class="modal-title">Create Timer</h4>
+			</div>
+			<form name="createTaskForm" novalidate>
+				<div class="modal-body">
+					<input type="text" placeholder="Task title..." ng-model="task.title" ng-minlength="1" ng-required="true" />
+				</div>
+				<div class="modal-footer">
+					<button class="btn btn-submit" ng-click="start()">Start</button>
+					<button class="btn close" ng-click="cancel()">Cancel</button>
+				</div>
+			</form>
+		</div>
+	</div>
+</div>

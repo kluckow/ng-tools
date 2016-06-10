@@ -1,0 +1,4 @@
+.modal.ng-leave {
+  transition: opacity .5s ease-out;
+  opacity: 1;
+}

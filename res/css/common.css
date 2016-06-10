@@ -1,0 +1,20 @@
+body {
+	padding-top:65px;
+	background: #C8D7E3;
+}
+.module-title {
+	font-size: 32px;
+	color: #AA0114;
+}
+.clickable:hover {
+	cursor: pointer;
+}
+.toolbar-item:hover {
+	background: #2F4E6F;
+}
+#global-toolbar {
+	font-size: 24px;
+}
+.navbar-nav li a {
+    line-height: 34px;
+}
