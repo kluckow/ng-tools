@@ -1,4 +1,6 @@
-.modal.ng-leave {
-  transition: opacity .5s ease-out;
-  opacity: 1;
+.alert {
+    display: inline-block;
+	padding: 8px;
+    font-size: 11px;
+    margin-bottom: 0;
 }

@@ -1,18 +1,20 @@
-<div class="row">
-	<span class="module-title col-xs-12">{{module.title}}</span>
-</div>
-<div class="row timetracker-view">
-	<div class="col-xs-2 btn-group-vertical">
-		<button ng-click="openCreateTaskModal()"class="btn btn-default">Start Tracking</button>
-		<button class="btn btn-default">Overview</button>
-		<button class="btn btn-default">Dummy</button>
+<div id="timetracker-view">
+	<div class="row">
+		<span class="module-title col-xs-12">{{module.title}}</span>
 	</div>
-	
-	<div class="col-xs-4">
-		<div class="row" ng-repeat="task in taskList">
-			<h4 ng-bind="task.title"></h4>
-			<p>Created: </span><span ng-bind="task.created"></p>
-			<p>Current time: TODO</p>
+	<div class="row timetracker-view">
+		<div class="col-xs-2 btn-group-vertical">
+			<button ng-click="openCreateTaskModal()"class="btn btn-default">Start Tracking</button>
+			<button class="btn btn-default">Overview</button>
+			<button class="btn btn-default">Dummy</button>
+		</div>
+		
+		<div class="col-xs-4">
+			<div class="row" ng-repeat="task in taskList">
+				<h4 ng-bind="task.title"></h4>
+				<p>Created: </span><span ng-bind="task.created"></p>
+				<p>Current time: TODO</p>
+			</div>
 		</div>
 	</div>
 </div>

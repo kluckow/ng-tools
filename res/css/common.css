@@ -18,3 +18,12 @@ body {
 .navbar-nav li a {
     line-height: 34px;
 }
+.modal-content {
+	border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+}
+.modal-header {
+	background: #222222;
+	color: #C8D7E3;
+	border: 10px 10px 10px 10px solid #C8D7E3;
+}

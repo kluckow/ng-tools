@@ -4,7 +4,7 @@ var ngToolsApp = angular.module('ngToolsApp', [
 		 	// dashboard
 		 	'dashboard.controller',
 		 	// timetracker
-		 	'timetracker.controller'
+		 	'timetracker.controller',
 		 	]);
 
 ngToolsApp.config(['$urlRouterProvider', '$stateProvider', function ($urlRouterProvider, $stateProvider) {
@@ -27,20 +27,26 @@ ngToolsApp.controller('DateCtrl', ['$scope', '$interval', function($scope, $inte
 	
 	// set time before intervals to have it shown immediately after page load
 	$scope.currentTime = new Date();
-	$scope.color = "#fff";
+	$scope.color = "#222222";
 	
 	// refresh time every 1000ms
 	$interval(function() {
 		$scope.currentTime = new Date();
-		if ($scope.currentTime.getHours() >= 10) {
-			$scope.color = "lightgreen";
-			if ($scope.currentTime.getHours() >= 17) {
-				$scope.color = "#FCB814";
-				if ($scope.currentTime.getHours() >= 18) {
-					$scope.color = "#AA0114";
+	if ($scope.currentTime.getHours() >= 0) {
+		$scope.color = "#AF0082";
+		if ($scope.currentTime.getHours() >= 9) {
+			$scope.color = "#0A17EA";
+			if ($scope.currentTime.getHours() >= 12) {
+				$scope.color = "36ECBD";
+				if ($scope.currentTime.getHours() >= 15) {
+					$scope.color = "#FCB814";
+					if ($scope.currentTime.getHours() >= 18) {
+						$scope.color = "#AA0114";
+					}
 				}
 			}
 		}
+	}
 	}, 1000);
 }]);
 

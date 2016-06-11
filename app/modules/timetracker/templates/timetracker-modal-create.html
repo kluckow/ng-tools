@@ -1,18 +1,38 @@
 <div class="modal fade">
+    <!-- if content gets more width -->
+    <!-- <div class="modal-dialog modal-lg"> -->
 	<div class="modal-dialog">
 		<div class="modal-content">
 			<div class="modal-header">
 				<h4 class="modal-title">Create Timer</h4>
 			</div>
-			<form name="createTaskForm" novalidate>
-				<div class="modal-body">
-					<input type="text" placeholder="Task title..." ng-model="task.title" ng-minlength="1" ng-required="true" />
-				</div>
-				<div class="modal-footer">
-					<button class="btn btn-submit" ng-click="start()">Start</button>
-					<button class="btn close" ng-click="cancel()">Cancel</button>
-				</div>
+   			<form name="createTaskForm" novalidate>
+    			<div class="modal-body">
+                    <div class="row">
+                        <div class="col-xs-4">
+	                       <input class="form-control" type="text" placeholder="Task title..." ng-model="task.title" ng-minlength="1" ng-required="true" autofocus />
+	                    </div>
+						<div class="col-xs-8">
+							<span ng-if="taskAlreadyExists" class="alert alert-danger">
+								<span class="glyphicon glyphicon-exclamation-sign"></span>
+								<span>Task already exists!</span>
+							</span>
+							<span ng-if="taskCreateSuccess" class="alert alert-success">
+								<span class="glyphicon glyphicon-ok"></span>
+								<span>Creating Task!</span>
+							</span>
+							<span ng-if="taskNoName" class="alert alert-danger">
+								<span class="glyphicon glyphicon-exclamation-sign"></span>
+								<span>Please enter a task name!</span>
+							</span>
+						</div>
+					</div>
+    			</div>
 			</form>
+			<div class="modal-footer">
+				<button class="btn btn-info" ng-click="start()">Start</button>
+				<button class="btn btn-warning" ng-click="cancel()">Cancel</button>
+			</div>
 		</div>
 	</div>
 </div>
