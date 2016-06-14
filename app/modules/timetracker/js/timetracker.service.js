@@ -1,4 +1,4 @@
-var timetrackerService = angular.module('timetracker.service', []);
+var timetrackerService = angular.module('timetracker.service', ['string.utils']);
 /**
  * TimetrackerService
  * Description: Add task to your task list.
@@ -7,6 +7,8 @@ timetrackerService.service('TimetrackerService', ['$log', 'TaskListCheckService'
 	var taskList = new Array();
 	this.addTask = function(task) {
 		if (TaskListCheckService.isTaskExisting(task, taskList) === false) {
+			// create date for new task
+			task.created = new Date();
 			taskList.push(task);
 			return true;
 		}
@@ -27,11 +29,11 @@ timetrackerService.service('TimetrackerService', ['$log', 'TaskListCheckService'
  * TaskListCheckService
  * Description: Check if a task with the same title already exists.
  */
-timetrackerService.service('TaskListCheckService', ['$log', function($log) {
+timetrackerService.service('TaskListCheckService', ['$log', 'StringUtils', function($log, StringUtils) {
 	$log.debug("Using TaskListCheckServiceService.");
 	this.isTaskExisting = function(task, taskList) {
 	    for (var i = 0; i < taskList.length; i++) {
-	        if (taskList[i].title === task.title) {
+	        if (taskList[i].title === StringUtils.trim(task.title)) {
 	        	$log.error("Task with title '" + taskList[i].title + "' already existing");
 	            return true;
 	        }

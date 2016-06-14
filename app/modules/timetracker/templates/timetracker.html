@@ -1,10 +1,14 @@
 <div id="timetracker-view">
-    <div class="row">
+    <div id="timetracker-search" class="row">
         <div class="col-xs-4 col-md-2">
             <input ng-model="searchTask" ng-change="filterTask(searchTask)" type="text" class="form-control" placeholder="Search title, description or time..." />
         </div>
+        <div class="col-xs-2">
+            <!-- TODO: center vertically -->
+            <input type="checkbox"ng-model="showTaskDescription"><label> Show Task Description </label>
+        </div>
     </div>
-    <!-- TODO: margin bottom -->
+
 	<div class="row">
 		<div class="col-xs-4 col-md-2 btn-group-vertical">
 			<button ng-disabled="modalActive" ng-click="openCreateTaskModal()"class="btn btn-default">Start Tracking</button>
@@ -14,9 +18,9 @@
 			<div class="timetracker-task-item row bordered" ng-repeat="task in getTaskList() | filter : searchTask">
 	            <div class="col-xs-6" style="display:table-cell;">
 					<u><span class="row timetracker-task-item-title" ng-bind="task.title"></span></u>
-					<span>Created:</span><span ng-bind="task.created | date : 'HH:mm dd.MM.yyyy'"></span>
-					<span class="row"><u>Description</u>:</span>
-					<span class="row">Zimmer, Küche, Wohnzimmer, Bad, Keller, Garage</span>
+					<span>Created: </span><span ng-bind="task.created | date : 'HH:mm dd.MM.yyyy'"></span>
+					<span ng-if="showTaskDescription" class="row"><u>Description</u>:</span>
+					<span ng-if="showTaskDescription" class="row">Zimmer, Küche, Wohnzimmer, Bad, Keller, Garage</span>
 				</div>
 				<div class="col-xs-6 pull-right">
 				    <div class="row text-center">
