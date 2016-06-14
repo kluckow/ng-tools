@@ -6,7 +6,7 @@
 .view-container {
   position: relative;
 }
-
+/* animations */
 .view-frame.ng-enter, .view-frame.ng-leave {
   position: absolute;
   top: 0;

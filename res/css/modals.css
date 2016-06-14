@@ -10,6 +10,7 @@
 .modal-footer {
 	/* border: none; */
 }
+/* animations */
 .modal.ng-enter {
   transition: opacity .5s ease-out;
   opacity: 0;
