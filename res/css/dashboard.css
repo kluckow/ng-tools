@@ -5,15 +5,14 @@
 	background: #FFFFFF;
 }
 .dashboard-menu-item a:focus {
-	border: 10px solid #222222;
-	padding: 5px;
 	border-radius: 2px !important;
-	outline: 0;
+	outline: 3px solid #222222;
 }
 .dashboard-menu-item a {
 	font-size: 50px;
 	line-height: 37px;
 }
+/* animations */
 .dashboard-menu-item.ng-enter {
   transition: opacity .5s ease-out;
   opacity: 0;

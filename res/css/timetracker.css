@@ -5,6 +5,16 @@
     /* bootstrap .alert has margin-bottom: 20px for some reason */
     margin-bottom: 0px;
 }
+.timetracker-task-item {
+	padding: 15px !important;
+	margin-bottom: 8px !important;
+	border-radius: 3px;
+	background: #ffffff;
+    color: #222222;
+}
+#timetracker-search {
+	margin-bottom: 5px !important;
+}
 .timetracker-task-item-title {
 	font-size: 24px;
 	font-style: underlined;
@@ -14,19 +24,16 @@
     line-height: 32px;
     background: #778899;
 }
+.timetracker-action:focus {
+	outline-color: #880000;
+}
 .timetracker-duration-display {
 	font-size: 32px;
-}
-.timetracker-task-item {
-	padding: 15px !important;
-	margin-bottom: 8px !important;
-	border-radius: 3px;
-	background: #ffffff;
-    color: #222222;
 }
 .timetracker-task-item button:hover {
 	color: #880000;
 }
+/* animations */
 .timetracker-task-item.ng-enter {
   transition: opacity .5s ease-out;
   opacity: 0;
