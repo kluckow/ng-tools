@@ -3,20 +3,22 @@ var timetracker = angular.module('timetracker.controller',
 
 timetracker.controller('TimetrackerController', ['$scope', 'ModalService', '$log', 'TimetrackerService', 'ViewService',
                                                  function($scope, ModalService, $log, TimetrackerService, ViewService) {
+	$scope.modalActive = false;
 	ViewService.setView("timetracker");
 	
 	$scope.openCreateTaskModal = function() {
+		// deactivate open create modal button
+		$scope.modalActive = true;
 		$log.debug("Loading 'Create Timer' modal...")
 		ModalService.showModal({
 			templateUrl : "app/modules/timetracker/templates/timetracker-modal-create.html",
 			controller : "ModalController"
 		}).then(function(modal) {
 			modal.element.modal();
-			// TODO: disable underlay functions
-//			currently callback not needed			
-//			modal.close.then(function(task) {
-//				$scope.taskList.push(task);
-//			});
+			// reset open create modal button to enabled state after modal is closed
+			modal.close.then(function(task) {
+				$scope.modalActive = false;
+			});
 		});
 	};
 	$scope.getTaskList = function() {

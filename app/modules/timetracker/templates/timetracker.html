@@ -7,7 +7,7 @@
     <!-- TODO: margin bottom -->
 	<div class="row">
 		<div class="col-xs-4 col-md-2 btn-group-vertical">
-			<button ng-click="openCreateTaskModal()"class="btn btn-default">Start Tracking</button>
+			<button ng-disabled="modalActive" ng-click="openCreateTaskModal()"class="btn btn-default">Start Tracking</button>
 		</div>
 		
 	    <div class="col-xs-8 col-md-4" ng-if="getTaskList().length > 0">
