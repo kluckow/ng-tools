@@ -1,29 +1,10 @@
 body {
-	padding-top:65px;
-	background: #C8D7E3;
+	padding-top:75px;
+	background: #778899;
 }
-.module-title {
-	font-size: 32px;
-	color: #AA0114;
+.bordered {
+    border: 1px solid #222222;
 }
 .clickable:hover {
 	cursor: pointer;
-}
-.toolbar-item:hover {
-	background: #2F4E6F;
-}
-#global-toolbar {
-	font-size: 24px;
-}
-.navbar-nav li a {
-    line-height: 34px;
-}
-.modal-content {
-	border-top-left-radius: 4px;
-    border-top-right-radius: 4px;
-}
-.modal-header {
-	background: #222222;
-	color: #C8D7E3;
-	border: 10px 10px 10px 10px solid #C8D7E3;
 }

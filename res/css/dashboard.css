@@ -1,4 +1,30 @@
+.dashboard-menu-item .glyphicon {
+	color: #880000;
+}
+.dashboard-menu-item a:hover {
+	background: #FFFFFF;
+}
+.dashboard-menu-item a:focus {
+	border: 10px solid #222222;
+	padding: 5px;
+	border-radius: 2px !important;
+	outline: 0;
+}
 .dashboard-menu-item a {
 	font-size: 50px;
 	line-height: 37px;
+}
+.dashboard-menu-item.ng-enter {
+  transition: opacity .5s ease-out;
+  opacity: 0;
+}
+.dashboard-menu-item.ng-enter.ng-enter-active {
+  opacity: 1;
+}
+.dashboard-menu-item.ng-leave {
+  transition: opacity .5s ease-out;
+  opacity: 1;
+}
+.dashboard-menu-item.ng-leave.ng-leave-active {
+  opacity: 0;
 }

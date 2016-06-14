@@ -1,0 +1,21 @@
+#global-toolbar {
+    font-size: 24px;
+    /* navbar had 15px padding-right too less */
+    padding-right: 15px;
+}
+#global-toolbar .navbar-text {
+	color: #880000;
+}
+#global-toolbar .navbar-nav li a {
+    line-height: 34px;
+}
+#global-toolbar .navbar-nav li a:hover {
+    background: #778899;
+    color: #880000;
+}
+#global-toolbar-search-item {
+	margin-top: 4px;
+}
+.global-toolbar-item:hover {
+    background: #2F4E6F;
+}

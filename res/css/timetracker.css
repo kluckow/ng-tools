@@ -2,5 +2,40 @@
     display: inline-block;
 	padding: 8px;
     font-size: 11px;
-    margin-bottom: 0;
+}
+.timetracker-task-item-title {
+	font-size: 24px;
+	font-style: underlined;
+}
+.timetracker-action {
+    font-size: 32px;
+    line-height: 32px;
+    background: #778899;
+}
+.timetracker-duration-display {
+	font-size: 32px;
+}
+.timetracker-task-item {
+	padding: 15px !important;
+	margin-bottom: 8px !important;
+	border-radius: 3px;
+	background: #ffffff;
+    color: #222222;
+}
+.timetracker-task-item button:hover {
+	color: #880000;
+}
+.timetracker-task-item.ng-enter {
+  transition: opacity .5s ease-out;
+  opacity: 0;
+}
+.timetracker-task-item.ng-enter.ng-enter-active {
+  opacity: 1;
+}
+.timetracker-task-item.ng-leave {
+  transition: opacity .5s ease-out;
+  opacity: 1;
+}
+.timetracker-task-item.ng-leave.ng-leave-active {
+  opacity: 0;
 }

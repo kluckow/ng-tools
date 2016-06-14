@@ -1,0 +1,26 @@
+.modal-content {
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+}
+.modal-header {
+    background: #222222;
+    color: #FFFFFF;
+    border: 10px 10px 10px 10px solid #C8D7E3;
+}
+.modal-footer {
+	/* border: none; */
+}
+.modal.ng-enter {
+  transition: opacity .5s ease-out;
+  opacity: 0;
+}
+.modal.ng-enter.ng-enter-active {
+  opacity: 1;
+}
+.modal.ng-leave {
+  transition: opacity .5s ease-out;
+  opacity: 1;
+}
+.modal.ng-leave.ng-leave-active {
+  opacity: 0;
+}
