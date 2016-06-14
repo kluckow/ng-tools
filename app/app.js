@@ -1,10 +1,16 @@
 var ngToolsApp = angular.module('ngToolsApp', [
 		 	// external modules
 		 	'ui.router', 'ngAnimate',
+		 	// util modules
+		 	'usability.directives',
+		 	// navigation
+		 	'navigation.controller', 'navigation.services',
 		 	// dashboard
 		 	'dashboard.controller',
 		 	// timetracker
 		 	'timetracker.controller',
+		 	// pictures
+		 	'pictures.controller',
 		 	]);
 
 ngToolsApp.config(['$urlRouterProvider', '$stateProvider', function ($urlRouterProvider, $stateProvider) {
@@ -22,7 +28,13 @@ ngToolsApp.config(['$urlRouterProvider', '$stateProvider', function ($urlRouterP
 			templateUrl: 'app/modules/timetracker/templates/timetracker.html',
 			controller: 'TimetrackerController'
 		})
+		.state('pictures', {
+			url: '/pictures',
+			templateUrl: 'app/modules/pictures/templates/pictures.html',
+			controller: 'PicturesController'
+		})
 }]);
+// TODO: move to common
 ngToolsApp.controller('DateCtrl', ['$scope', '$interval', function($scope, $interval) {
 	
 	// set time before intervals to have it shown immediately after page load
