@@ -1,19 +1,36 @@
 <div id="timetracker-view">
+    <div class="row">
+        <div class="col-xs-4 col-md-2">
+            <input ng-model="searchTask" ng-change="filterTask(searchTask)" type="text" class="form-control" placeholder="Search title, description or time..." />
+        </div>
+    </div>
+    <!-- TODO: margin bottom -->
 	<div class="row">
-		<span class="module-title col-xs-12">{{module.title}}</span>
-	</div>
-	<div class="row timetracker-view">
-		<div class="col-xs-2 btn-group-vertical">
+		<div class="col-xs-4 col-md-2 btn-group-vertical">
 			<button ng-click="openCreateTaskModal()"class="btn btn-default">Start Tracking</button>
-			<button class="btn btn-default">Overview</button>
-			<button class="btn btn-default">Dummy</button>
 		</div>
 		
-		<div class="col-xs-4">
-			<div class="row" ng-repeat="task in taskList">
-				<h4 ng-bind="task.title"></h4>
-				<p>Created: </span><span ng-bind="task.created"></p>
-				<p>Current time: TODO</p>
+	    <div class="col-xs-8 col-md-4" ng-if="getTaskList().length > 0">
+			<div class="timetracker-task-item row bordered" ng-repeat="task in getTaskList() | filter : searchTask">
+	            <div class="col-xs-6" style="display:table-cell;">
+					<u><span class="row timetracker-task-item-title" ng-bind="task.title"></span></u>
+					<span>Created:</span><span ng-bind="task.created | date : 'HH:mm dd.MM.yyyy'"></span>
+					<span class="row"><u>Description</u>:</span>
+					<span class="row">Zimmer, Küche, Wohnzimmer, Bad, Keller, Garage</span>
+				</div>
+				<div class="col-xs-6 pull-right">
+				    <div class="row text-center">
+					    <button ng-if="!task.running" ng-click="task.running = !task.running"
+					       class="btn btn-sm timetracker-action clickable"><span class="glyphicon glyphicon-play"></span></button>
+					    <button ng-if="task.running" ng-click="task.running = !task.running"
+					       class="btn btn-sm timetracker-action clickable"><span class="glyphicon glyphicon-pause"></span></button>
+					    <button ng-click="finishTask($index)" class="btn btn-sm timetracker-action clickable"><span class="glyphicon glyphicon-stop"></span></button>
+					    <button ng-click="deleteTask($index)" class="btn btn-sm timetracker-action clickable"><span class="glyphicon glyphicon-trash"></span></button>
+				    </div>
+				    <div class="row text-center">
+						<span class="row timetracker-duration-display">01:05:23</span>
+				    </div>
+				</div>
 			</div>
 		</div>
 	</div>

@@ -10,7 +10,8 @@
     			<div class="modal-body">
                     <div class="row">
                         <div class="col-xs-4">
-	                       <input class="form-control" type="text" placeholder="Task title..." ng-model="task.title" ng-minlength="1" ng-required="true" autofocus />
+	                       <input name="taskTitleInput" class="form-control" type="text" placeholder="Task title..."
+                               ng-model="task.title" ng-minlength="3" required autofocus />
 	                    </div>
 						<div class="col-xs-8">
 							<span ng-if="taskAlreadyExists" class="alert alert-danger">
@@ -30,7 +31,7 @@
     			</div>
 			</form>
 			<div class="modal-footer">
-				<button class="btn btn-info" ng-click="start()">Start</button>
+				<button type="submit" class="btn btn-info" ng-disabled="createTaskForm.taskTitleInput.$invalid" ng-click="start()">Start</button>
 				<button class="btn btn-warning" ng-click="cancel()">Cancel</button>
 			</div>
 		</div>

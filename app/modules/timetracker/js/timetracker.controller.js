@@ -1,10 +1,9 @@
 var timetracker = angular.module('timetracker.controller',
 		['angularModalService', 'timetracker.service']);
 
-timetracker.controller('TimetrackerController', ['$scope', 'ModalService', '$log', function($scope, ModalService, $log) {
-	$scope.module = {
-		"title" : "Timetracker"
-	};
+timetracker.controller('TimetrackerController', ['$scope', 'ModalService', '$log', 'TimetrackerService', 'ViewService',
+                                                 function($scope, ModalService, $log, TimetrackerService, ViewService) {
+	ViewService.setView("timetracker");
 	
 	$scope.openCreateTaskModal = function() {
 		$log.debug("Loading 'Create Timer' modal...")
@@ -20,6 +19,15 @@ timetracker.controller('TimetrackerController', ['$scope', 'ModalService', '$log
 //			});
 		});
 	};
+	$scope.getTaskList = function() {
+		return TimetrackerService.getTaskList();
+	};
+	$scope.deleteTask = function(index) {
+		TimetrackerService.deleteTask(index);
+	};
+	$scope.finishTask = function(index) {
+		// TODO: implement finish dialog
+	};
 }]);
 
 timetracker.controller('ModalController',
@@ -29,7 +37,7 @@ timetracker.controller('ModalController',
 	$scope.taskCreateSuccess = false;
 	$scope.task = {
 		created : "",
-		stopped : "",
+		running : false,
 		title : ""
 	};
 	$scope.addTask = function(task) {
@@ -39,7 +47,7 @@ timetracker.controller('ModalController',
 		$timeout(function() {
 			$element.modal('hide');
 			close();
-		}, 500);
+		}, 250);
 	};
 	$scope.start = function() {
 		if ($scope.task.title == "" || $scope.task.title == undefined) {

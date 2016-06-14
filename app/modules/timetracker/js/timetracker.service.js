@@ -12,19 +12,24 @@ timetrackerService.service('TimetrackerService', ['$log', 'TaskListCheckService'
 		}
 		return false;
 	};
+	this.deleteTask = function(index) {
+		if (taskList.splice(index, 1).length == 0) {
+			$log.error(taskList[index] + " could not be deleted!");
+			return false;
+		}
+		return true;
+	};
+	this.getTaskList = function() {
+		return taskList;
+	};
 }]);
 /**
  * TaskListCheckService
  * Description: Check if a task with the same title already exists.
  */
 timetrackerService.service('TaskListCheckService', ['$log', function($log) {
-	
 	$log.debug("Using TaskListCheckServiceService.");
-	
 	this.isTaskExisting = function(task, taskList) {
-		$log.debug(taskList);
-		$log.debug(task);
-		
 	    for (var i = 0; i < taskList.length; i++) {
 	        if (taskList[i].title === task.title) {
 	        	$log.error("Task with title '" + taskList[i].title + "' already existing");
