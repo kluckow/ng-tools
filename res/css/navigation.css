@@ -16,6 +16,10 @@
 #global-toolbar-search-item {
 	margin-top: 4px;
 }
+#global-toolbar-search-item > form > div > input:focus {
+	border: 2px solid #880000;
+	outline: none !important;
+}
 .global-toolbar-item:hover {
     background: #2F4E6F;
 }

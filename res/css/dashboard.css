@@ -2,11 +2,15 @@
 	color: #880000;
 }
 .dashboard-menu-item a:hover {
-	background: #FFFFFF;
+	background: #ffffff;
+	border-radius: 2px !important;
+	border: 2px solid #222222;
 }
 .dashboard-menu-item a:focus {
+	outline: 0;
+	background: #ffffff;
 	border-radius: 2px !important;
-	outline: 3px solid #222222;
+    border: 2px solid #222222;
 }
 .dashboard-menu-item a {
 	font-size: 50px;
