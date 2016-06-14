@@ -4,6 +4,7 @@ var timetracker = angular.module('timetracker.controller',
 timetracker.controller('TimetrackerController', ['$scope', 'ModalService', '$log', 'TimetrackerService', 'ViewService',
                                                  function($scope, ModalService, $log, TimetrackerService, ViewService) {
 	$scope.modalActive = false;
+	$scope.showTaskDescription = true;
 	ViewService.setView("timetracker");
 	
 	$scope.openCreateTaskModal = function() {
@@ -37,6 +38,8 @@ timetracker.controller('ModalController',
 	$log.debug("Loading ModalController...")
 	$scope.taskAlreadyExists = false;
 	$scope.taskCreateSuccess = false;
+	$scope.taskNoName = false;
+	$scope.taskCreationFinished = false;
 	$scope.task = {
 		created : "",
 		running : false,
@@ -49,7 +52,7 @@ timetracker.controller('ModalController',
 		$timeout(function() {
 			$element.modal('hide');
 			close();
-		}, 250);
+		}, 100);
 	};
 	$scope.start = function() {
 		if ($scope.task.title == "" || $scope.task.title == undefined) {
@@ -62,10 +65,8 @@ timetracker.controller('ModalController',
 			if ($scope.addTask($scope.task)) {
 				// set property to hide danger alert
 				$scope.taskAlreadyExists = false;
-				// create date for new task
-				$scope.task.created = new Date();
-				// show success alert for 2s
 				$scope.taskCreateSuccess = true;
+				$scope.taskCreationFinised = true;
 				$timeout(function() {
 					$scope.taskCreateSuccess = false;
 				}, 2000);

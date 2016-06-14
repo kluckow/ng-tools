@@ -6,12 +6,12 @@
 			<div class="modal-header">
 				<h4 class="modal-title">Create Timer</h4>
 			</div>
-   			<form name="createTaskForm" novalidate>
+   			<form name="createTaskForm" ng-submit="start()" novalidate>
     			<div class="modal-body">
                     <div class="row">
                         <div class="col-xs-4">
 	                       <input name="taskTitleInput" class="form-control" type="text" placeholder="Task title..."
-                               ng-model="task.title" ng-minlength="3" required autofocus />
+                               ng-disabled="taskCreationFinised" ng-model="task.title" ng-minlength="3" required autofocus />
 	                    </div>
 						<div class="col-xs-8">
 							<span ng-if="taskAlreadyExists" class="alert alert-danger">
