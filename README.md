@@ -1,5 +1,5 @@
 # ng-tools
-<h2>Used Libraries</h2>
+<h2>Used Libraries (node_modules)</h2>
 <ul>
   <li>angular 1.5.6</li>
   <li>angular-animate 1.5.6</li>
